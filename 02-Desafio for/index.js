@@ -23,12 +23,11 @@ botao.addEventListener('click', () => {
     }
 
     // Faça um loop no array de contatos
-    for (const contato of contatos) {
-
+    for (let i = 0; i < contatos.length; i++) {
         // Verifique se o nome do contato eh igual ao nome da entrada
-        if (entrada.value.toLowerCase() === contato.nome.toLowerCase()) {
+        if (entrada.value.toLowerCase() === contatos[i].nome.toLowerCase()) {
             // Se sim, mostre o nome e o numero do contato
-            paragrafo.innerHTML = `Nome: ${contato.nome} Telefone: ${contato.numero}`;
+            paragrafo.innerHTML = `Nome: ${contatos[i].nome} Telefone: ${contatos[i].numero}`;
             // break para sair do loop
             break;
         } else {
