@@ -10,17 +10,26 @@ function calculadoraDesconto(valor, desconto) {
     return resultado;
 }
 
-valorFinal = 0;
+let valorFinal = 0;
+let somaTotalDaCompra = 0;
+let ValorEconomizado = 0;
+let valorComDesconto = 0;
+
 valorDosProdutosCompra.forEach(valor => {
 
     if (valor > 30) {
         const desconto = calculadoraDesconto(valor, 10);
-        valorFinal += (valor - desconto);
+        valorComDesconto += (valor - desconto);
+        
     } else {
         valorFinal += valor;
     }
+
+    somaTotalDaCompra += valor;
+    ValorEconomizado = somaTotalDaCompra - valorComDesconto;
+
 });
 
-console.log(valorFinal)
+console.log(`O valor final da compra foi de R$ ${somaTotalDaCompra.toFixed(2)}, porém você teve desconto, irá pagar apenas R$ ${(valorComDesconto.toFixed(2))}, você economizou R$ ${ValorEconomizado.toFixed(2)} Reais.`);
 
 
